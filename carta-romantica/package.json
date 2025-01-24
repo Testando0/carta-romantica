@@ -1,0 +1,21 @@
+{
+  "name": "carta-romantica",
+  "version": "1.0.0",
+  "description": "Um projeto de player de música romântico para dar feliz aniversário.",
+  "main": "src/js/main.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build script not defined'",
+    "test": "echo 'Test script not defined'"
+  },
+  "keywords": [
+    "música",
+    "romântico",
+    "aniversário"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

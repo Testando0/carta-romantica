@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Player de Música Romântico</title>
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <img src="assets/images/passarinho.png" alt="Passarinho" class="bird-image">
+            <img src="assets/images/player-image.jpeg" alt="Imagem do Player" class="player-image">
+            <div class="duracao">
+                <div class="barra">
+                    <div class="progress"></div>
+                    <div class="ponto"></div>
+                </div>
+                <div class="tempo">
+                    <p class="inicio">0:00</p>
+                    <p class="fim">0:00</p>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="prev"><i class="fas fa-backward"></i></button>
+                <button class="play"><i class="fas fa-heart"></i></button>
+                <button class="next"><i class="fas fa-forward"></i></button>
+            </div>
+            <div class="wave-container">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <p class="footer">Eu te amo, <br> para sempre!</p>
+        </div>
+        <div class="letter-section">
+            <div class="emoji-card" id="emojiCard">
+                <img src="assets/images/carta.gif" alt="">
+            </div>
+            <button class="open-letter" id="openLetterButton">
+                <img src="assets/images/gif-icon.gif" alt="Ícone animado" class="letter-icon">
+                ABRA A CARTA
+            </button>
+        </div>
+        <div class="modal" id="letterModal">
+            <span class="close" id="closeModal">&times;
+            </span>
+            <img src="assets/images/letter-image.png" alt="Carta" class="letter-image">
+        </div>
+    </div>
+    <script>
+        document.querySelector('.letter-section').addEventListener('click', function() {
+            window.location.href = 'assets/images/letter-image.png';
+        });
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

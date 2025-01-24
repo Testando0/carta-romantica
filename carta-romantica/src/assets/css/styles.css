@@ -1,0 +1,372 @@
+/* Estilos gerais */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: #f5f5f5;
+    padding: 2rem 2rem;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Player de música */
+.music-player {
+    position: relative;
+    background: linear-gradient(to bottom, #F0E5DA 0%, #E2CCB6 50%, #D9AA67 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bird-image {
+    position: absolute;
+    top: -30px;
+    left: 40px;
+    width: 60px;
+    height: auto;
+    z-index: 2;
+    transform: rotate(-15deg);
+}
+
+@media (max-width: 768px) {
+    .bird-image {
+        width: 40px;
+        top: -20px;
+        left: 40px;
+    }
+}
+
+.player-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    border: 5px solid #401914;
+}
+
+/* Barra de progresso */
+.duracao {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.barra {
+    width: 100%;
+    height: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.progress {
+    height: 6px;
+    width: 0%;
+    background-color: #e23c2a;
+    border-radius: 5px;
+}
+
+.ponto {
+    width: 15px;
+    height: 15px;
+    background-color: #AA2B1D;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    margin-left: -7px;
+}
+
+.tempo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Controles */
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.controls button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.controls .play {
+    font-size: 2.5rem;
+    color: #AA2B1D;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 2px solid #AA2B1D;
+    outline-offset: 3px;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    color: #e23c2a;
+}
+
+.wave-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+    margin: 15px 0;
+}
+
+.wave {
+    width: 3px;
+    height: 100%;
+    background-color: #401914;
+    animation: wave 1s ease-in-out infinite;
+    transform-origin: bottom;
+    opacity: 0;
+}
+
+.wave-container.playing .wave {
+    opacity: 1;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.wave:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.wave:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: scaleY(0.2);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+/* Seção da carta */
+.letter-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 2rem; */
+}
+
+.emoji-card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.emoji-card img {
+    width: 300px;
+    height: auto;
+    /* border-radius: 50%; */
+    /* object-fit: cover; */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+ 
+.open-letter {
+    background: #DD95DC;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.letter-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.open-letter:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.letter-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}
+
+.footer {
+    text-align: center;
+    width: 100%;
+    font-family: "Great Vibes", serif;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    font-size: 2rem;
+    color: #AA2B1D;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        padding-top: 26px;
+        max-width: 360px
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .player-image {
+        width: 150px;
+        height: 150px;
+    }
+    .music-player {
+        width: 300px;
+    }
+    .controls {
+        flex-direction: row; /* Mantém os botões na horizontal */
+        justify-content: space-around;
+        width: 100%;
+        margin: 1rem 0; 
+    }
+
+    .controls button {
+        width: auto; /* Remove largura fixa */
+        font-size: 1.2rem; /* Reduz tamanho do ícone */
+    }
+
+    .controls .play {
+        width: 40px; /* Reduz tamanho do botão play */
+        height: 40px;
+        font-size: 2rem;
+    }
+
+    .emoji-card {
+        font-size: 4rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
