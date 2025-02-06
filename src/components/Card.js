@@ -24,7 +24,7 @@ const Card = () => {
                     </div>
                 </div>
             )}
-            <button className="open-letter-button">ABRA A CARTA</button>
+            <button className="open-letter-button">ABRIR CARTA</button>
         </div>
     );
 };
